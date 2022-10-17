@@ -42,8 +42,6 @@ func toModel(target string) (string, error) {
 }
 
 func main() {
-  fmt.Println("Hello World")
-
   if len(os.Args) < 3 {
     fmt.Println(`Not enough arguments
 
