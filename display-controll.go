@@ -67,11 +67,11 @@ display-control <TARGET> <COMMAND>
     os.Exit(1)
   }
 
-  out, err := exec.Command("sudo", "ddcutil", "--model", model, "setvcp", first, second).Output()
+  out, err := exec.Command("ddcutil", "--model", model, "setvcp", first, second).CombinedOutput()
+  fmt.Println(string(out))
   if (err != nil) {
     fmt.Printf("Failed: %s\n", err)
     return
   }
 
-  fmt.Println(string(out))
 }
